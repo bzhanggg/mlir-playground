@@ -12,4 +12,10 @@ export LDFLAGS="-L/opt/homebrew/opt/llvm/lib"
 export CPPFLAGS="-I/opt/homebrew/opt/llvm/include"
 ```
 
-You can check that the correct binaries are being used by running `which clang` or `which llvm-config`.
+For Linux (Ubuntu 20.04) users, see how to install the MLIR build system at the [tutorial](https://mlir.llvm.org/getting_started/). If on cloudlab, this has already been preinstalled for you at `/mydeps/llvm-project/`. To ensure that the binaries are available for use, add the following line to your shell configuration (`.bashrc`):
+
+```bash
+export PATH="/mydeps/llvm-project/build/bin:$PATH"
+```
+
+You can check that the correct binaries are being used by running `which mlir-opt`. For Mac with a homebrew install, the path should be prefixed with `/opt/homebrew/`. For Cloudlab users, `which mlir-opt` should be prefixed with `/mydeps/`. 
